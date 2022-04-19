@@ -13,11 +13,13 @@ export class AppComponent {
       nome: 'Gaules',
       descricao: 'Teste Gaules',
       img: 'https://s2.glbimg.com/Yqf5nOCXmVHKKXYrGPfsJ-1WKZE=/0x0:1575x1138/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2021/i/Y/5ZrWZMTluyV0KYsGUbDA/foto-5-reproducao-twitter.jpg',
+      data: new Date(),
     },
     {
       nome: 'Alan',
       descricao: 'Teste Alan',
       img: 'https://pbs.twimg.com/profile_images/944712346500587522/duOz-D8s_400x400.jpg',
+      data: new Date(),
     },
   ];
 

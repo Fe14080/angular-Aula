@@ -74,3 +74,22 @@
     aria-describedby="basic-addon1"
   />
 </div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let atividade of streamer">
+    <div class="card h-100">
+      <img src="{{ atividade.img }}" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ atividade.nome }}</h5>
+        <p class="card-text">
+          {{ atividade.descricao }}
+        </p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{
+          atividade.data | date: 'hh:mm:ss'
+        }}</small>
+      </div>
+    </div>
+  </div>
+</div>
