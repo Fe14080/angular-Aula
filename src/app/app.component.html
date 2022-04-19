@@ -1,8 +1,12 @@
+<!-- Diretrizes esr=truturais *ngFor *ngIf-->
+
 <div class="container">
   <div class="row">
     <div class="col">
       <ul class="list-group">
-        <li *ngFor="let nome of lista" class="list-group-item">{{ nome }}</li>
+        <li *ngFor="let nome of lista; let i = index" class="list-group-item">
+          {{ i + 1 }} - {{ nome }}
+        </li>
         <!-- *ngFor=""  nesse caso criou uma variavel nome para cada elemento da lista do app.component.ts
         {{}} abrir duas chaves é para colocar elementos typescript no html
         -->
@@ -11,8 +15,60 @@
   </div>
 </div>
 
-<div *ngIf="lista.length > 5" class="container mt-3">
+<div *ngIf="getValor() as abc">{{ abc }}</div>
+
+<div *ngIf="lista.length > 5 as x" class="container mt-3">
   <div class="alert alert-primary" role="alert">
+    {{ x }}
     Lista cheia com {{ lista.length }} elementos
   </div>
+</div>
+
+<!-- Interpolação é abrir duas chaves para poder relacionar com as variaveis/atributos da classe no typescript -->
+<div class="container">
+  <p>{{ textoqualquer }}</p>
+
+  <p>{{ 1 + 1 }}</p>
+
+  <p>{{ getValor() * 3 }}</p>
+
+  <p>{{ true && false }}</p>
+
+  <!--
+    <img src="{{ urlimage }}" alt="" />
+    
+    <img [src]="urlimage" alt="" />
+    
+    <img bind-src="urlimage" alt="" />
+  -->
+
+  <!--[] atributo ou valor em volta de colchetes é databind
+      () atributo ou valor em volta de parenteses é um evento string/captura de evento-->
+
+  <p>{{ textoqualquer | uppercase }}</p>
+  <!-- utilizar o '|' pipe ja existe no angular certas funções pre definidas -->
+
+  <p>{{ data | date: 'dd/MM/YYYY' }}</p>
+
+  <p>{{ valor | currency: 'BRL' }}</p>
+  <p>R${{ valor }}</p>
+  <p>{{ 0.54 | percent }}</p>
+</div>
+
+<!-- diretrizes incorporadas -->
+<div class="container">
+  <div class="alert" [ngClass]="getclassname()" role="alert">
+    A simple warning alert—check it out!
+  </div>
+</div>
+
+<div class="container">
+  <input
+    (keyup)="onKeyUp($event)"
+    type="text"
+    class="form-control"
+    placeholder="Username"
+    aria-label="Username"
+    aria-describedby="basic-addon1"
+  />
 </div>
