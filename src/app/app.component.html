@@ -1,6 +1,18 @@
-<ul class="list-group">
-  <li *ngFor="let nome of lista" class="list-group-item">{{ nome }}</li>
-  <!-- *ngFor=""  nesse caso criou uma variavel nome para cada elemento da lista do app.component.ts
-  {{}} abrir duas chaves é para colocar elementos typescript no html
-  -->
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="list-group">
+        <li *ngFor="let nome of lista" class="list-group-item">{{ nome }}</li>
+        <!-- *ngFor=""  nesse caso criou uma variavel nome para cada elemento da lista do app.component.ts
+        {{}} abrir duas chaves é para colocar elementos typescript no html
+        -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="lista.length > 5" class="container mt-3">
+  <div class="alert alert-primary" role="alert">
+    Lista cheia com {{ lista.length }} elementos
+  </div>
+</div>

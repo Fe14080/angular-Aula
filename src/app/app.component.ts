@@ -6,5 +6,5 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  lista: string[] = ['carlos', 'joao', 'maria', 'bruno', 'pedro'];
+  lista: string[] = ['carlos', 'joao', 'maria', 'bruno', 'pedro', 'antonio'];
 }
